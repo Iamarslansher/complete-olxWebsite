@@ -1,0 +1,81 @@
+.login-container {
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://i.pinimg.com/originals/c2/35/81/c235810c25cc4b138529332bfff45132.jpg");
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-contant {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.login-contant-left {
+  width: 50%;
+  height: 100%;
+  color: white;
+  background-color: rgb(61, 61, 163);
+  text-align: center;
+}
+.login-link {
+  padding: 5px;
+  margin: 0px 10px;
+  border: 2px solid aqua;
+  border-radius: 50%;
+  transition: all 1s;
+}
+
+.login-link:hover {
+  background-color: aqua;
+  color: black;
+  cursor: pointer;
+  box-shadow: 0 0 10px aqua;
+  transform: translateY(-3px) scale(1.1);
+}
+
+.loginInput-fields {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.loginInput {
+  width: 160px;
+  padding: 6px;
+  border-radius: 10px;
+  outline: none;
+  transition: all 1s;
+  border: 1px solid black;
+}
+.loginInput:focus {
+  transform: translateX(3px);
+  box-shadow: 0 0 10px aqua;
+  border: 1px solid aqua;
+}
+
+.login-contant-right {
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.signup-info {
+  color: #00bf89;
+}
+
+.signup-para {
+  letter-spacing: 1px;
+}

@@ -1,0 +1,113 @@
+.signup-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://wallpapers.com/images/hd/1600x900-background-kbocjfpftninq69q.jpg");
+  background-size: 100% 100%;
+}
+
+.signup-contant {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.signup-contant-left {
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  background-color: white;
+}
+
+.signup-link {
+  padding: 5px;
+  margin: 0px 10px;
+  border: 2px solid aqua;
+  border-radius: 50%;
+  transition: all 1s;
+}
+
+.signup-link:hover {
+  background-color: aqua;
+  color: black;
+  cursor: pointer;
+  box-shadow: 0 0 10px aqua;
+  transform: translateY(-3px) scale(1.1);
+}
+
+.signupInput-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.signupInput {
+  width: 160px;
+  padding: 6px;
+  border-radius: 10px;
+  outline: none;
+  transition: all 1s;
+  border: 1px solid black;
+}
+.signupInput:focus {
+  transform: translateX(3px);
+  box-shadow: 0 0 10px aqua;
+  border: 1px solid aqua;
+}
+
+.signupBtn {
+  padding: 4px 20px;
+  border-radius: 4px;
+  border: none;
+  background-color: blue;
+  color: white;
+  letter-spacing: 1px;
+  transition: all 1s;
+}
+
+.signupBtn:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px aqua;
+  padding: 4px 30px;
+}
+
+.signup-contant-right {
+  width: 50%;
+  height: 100%;
+  color: white;
+  background-color: rgb(61, 61, 163);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.login-info-heading {
+  color: aqua;
+}
+.login-info-para {
+  letter-spacing: 1px;
+}
+
+.loginBtn {
+  padding: 4px 20px;
+  border-radius: 4px;
+  border: none;
+  background-color: gray;
+  color: white;
+  letter-spacing: 1px;
+  transition: all 1s;
+}
+
+.loginBtn:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px aqua;
+  padding: 4px 30px;
+}

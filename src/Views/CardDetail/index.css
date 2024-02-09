@@ -1,0 +1,97 @@
+.detail-contant {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.detail-contantLeftSide {
+  width: 70%;
+  height: 100%;
+}
+
+.contantImg {
+  width: 100%;
+  height: 100%;
+}
+.detail-contantRightSide {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: whitesmoke;
+}
+
+.contant-detail {
+  border: 1px solid black;
+  width: 80%;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.forContact {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 80%;
+  text-align: center;
+}
+
+.forContact:hover .contactIcon {
+  background-color: aqua;
+  color: black;
+}
+
+.contactIcon {
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 50%;
+  position: relative;
+  top: 10px;
+  margin-right: 4px;
+}
+
+.contact-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 0px;
+}
+
+.btn {
+  padding: 5px 0px;
+  width: 150px;
+  border-radius: 7px;
+  border: none;
+  transition: all 1s;
+}
+
+.btn:hover {
+  cursor: pointer;
+  width: 170px;
+  box-shadow: 0 0 10px #00bf89, 0px 0px 20px aqua;
+}
+
+.whatspBtn {
+  background-color: green;
+  font-size: 14px;
+  color: white;
+}
+
+.facebookBtn {
+  background-color: blue;
+  font-size: 14px;
+  color: white;
+}
+
+.loctaion {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 80%;
+  text-align: center;
+}

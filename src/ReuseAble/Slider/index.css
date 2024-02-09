@@ -1,0 +1,45 @@
+.slider-contanier {
+  width: 100%;
+  height: 50vh;
+  margin-top: 10px;
+  cursor: pointer;
+  background-image: url("https://cdn.shopify.com/s/files/1/0070/7032/files/trending-products_c8d0d15c-9afc-47e3-9ba2-f7bad0505b9b.png?v=1614559651");
+  background-size: 100% 100%;
+  animation: imageSlider 30s ease-in infinite;
+}
+
+@keyframes imageSlider {
+  0% {
+    background-image: url("https://cdn.shopify.com/s/files/1/0070/7032/files/trending-products_c8d0d15c-9afc-47e3-9ba2-f7bad0505b9b.png?v=1614559651");
+  }
+  10% {
+    background-image: url("https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  }
+  20% {
+    background-image: url("https://images.everydayhealth.com/images/what-are-natural-skin-care-products-alt-1440x810.jpg");
+  }
+  30% {
+    background-image: url("https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D");
+  }
+  40% {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQky5UaV7F6jH4n4SS8CGN7xD53f1SW_5Tvxg&usqp=CAU");
+  }
+  50% {
+    background-image: url("https://i.insider.com/5ed95c393f7370198527eea3?width=700");
+  }
+  60% {
+    background-image: url("https://img.freepik.com/free-photo/still-life-care-products_23-2149371308.jpg?size=626&ext=jpg&ga=GA1.1.632798143.1705622400&semt=ais");
+  }
+  70% {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLaHhiNOoXzATHObEempkUqhj_s5JX4iWnuA&usqp=CAU");
+  }
+  80% {
+    background-image: url("https://www.imarcgroup.com/blogs/files/7c618012-5557-4061-8c85-54fcb24dad36car-care-products-market-1.webp");
+  }
+  90% {
+    background-image: url("https://www.tomorrowsworldtoday.com/wp-content/uploads/2023/01/Image3-26.jpg");
+  }
+  100% {
+    background-image: url("https://media.freemalaysiatoday.com/wp-content/uploads/2022/09/Honda-e-bikes.jpg");
+  }
+}

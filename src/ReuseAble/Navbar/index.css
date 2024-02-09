@@ -1,0 +1,123 @@
+.navbar-contaniner {
+  width: 100%;
+  height: 17vh;
+  position: sticky;
+  top: 0;
+  z-index: 10000000;
+  background-color: #00bf89;
+}
+
+.nav-contant {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.avtar-img {
+  width: 100px;
+  border-radius: 50rem;
+}
+
+.inputField {
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 300px;
+  height: 100%;
+  padding-left: 10px;
+  outline: none;
+  border-radius: 5px;
+  border: 2px solid lightblue;
+}
+.input:focus {
+  border: 2px solid aqua;
+}
+
+.inputFieldBtn {
+  height: 100%;
+  background-color: green;
+  color: antiquewhite;
+  margin-left: 3px;
+  border-radius: 5px;
+  border: none;
+}
+
+.logOut-div {
+  width: 100px;
+  height: 25px;
+  border-radius: 7px;
+  background: rgb(14, 3, 27);
+  color: white;
+  letter-spacing: 1px;
+  transition: all 0.5s;
+  cursor: pointer;
+  border: 1px solid white;
+}
+.logOut-div:hover {
+  background: white;
+  color: black;
+}
+
+.addItemBtn {
+  width: 90px;
+  height: 25px;
+  background: linear-gradient(45deg, lightgreen, black);
+  border-radius: 30px;
+  color: white;
+  letter-spacing: 1px;
+  transition: all 0.5s;
+  cursor: pointer;
+  border: 1px solid silver;
+}
+
+.addItemBtn:hover {
+  background: white;
+  color: black;
+}
+
+.cartImg {
+  padding: 5px 13px;
+  font-size: 34px;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.cartImg:hover {
+  transform: translateY(-3px) scale(1.1);
+}
+
+.avtar-img {
+  width: 100px;
+  border-radius: 50rem;
+  border: 2px solid aqua;
+}
+.avtar-img:hover {
+  box-shadow: 0 0 10px aqua;
+  cursor: pointer;
+}
+
+.navbar-links {
+  width: 100%;
+  background-color: gray;
+  padding: 3px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar-link {
+  text-decoration: navy;
+  color: black;
+  transition: all 1s;
+}
+
+.navbar-link:hover {
+  color: aqua;
+  transform: scale(1.1);
+}

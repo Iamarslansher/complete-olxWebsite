@@ -1,0 +1,14 @@
+.footerImg-div {
+  width: 100%;
+  height: 250px;
+}
+
+.footerImg {
+  width: 100%;
+  height: 100%;
+}
+
+.footer-copyright {
+  text-align: center;
+  background-color: gray;
+}
