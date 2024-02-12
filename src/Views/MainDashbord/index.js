@@ -1,6 +1,7 @@
 import React from "react";
 import "./index.css";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 import Navbar from "../../ReuseAble/Navbar";
 import Slider from "../../ReuseAble/Slider";
@@ -10,6 +11,10 @@ import Footer from "../../ReuseAble/Footer";
 import { getingAds } from "../../config/firebase";
 
 function MainDashbord() {
+  const isMood = useSelector((state) => state.themeReducer);
+  const background_Color = isMood.theme.backgroundColor;
+  const is_color = isMood.theme.color;
+
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -22,10 +27,11 @@ function MainDashbord() {
   };
 
   return (
-    <div>
+    <div style={{ backgroundColor: background_Color, color: is_color }}>
       <Navbar />
       <Slider />
       <MoreServices />
+
       {products.length == 0 ? (
         <h2 style={{ textAlign: "center" }}>
           <img
@@ -34,11 +40,14 @@ function MainDashbord() {
           />
         </h2>
       ) : (
-        <div className="cardContainer">
-          {products.map((item) => {
-            return <CardItem item={item} />;
-          })}
-        </div>
+        <>
+          <h2 style={{ textAlign: "center" }}>Cards</h2>
+          <div className="cardContainer">
+            {products.map((item) => {
+              return <CardItem item={item} />;
+            })}
+          </div>
+        </>
       )}
       <Footer />
     </div>

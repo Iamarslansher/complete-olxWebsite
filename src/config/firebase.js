@@ -30,6 +30,7 @@ export const auth = getAuth(app);
 const db = getFirestore(app);
 const storage = getStorage(app);
 
+// LOG-IN
 export async function login(userInfo, navigate) {
   try {
     const { email, password } = userInfo;
@@ -40,6 +41,7 @@ export async function login(userInfo, navigate) {
   }
 }
 
+// SIGN-UP
 export async function signup(userInfo, navigate) {
   try {
     const { name, email, password } = userInfo;
@@ -60,17 +62,24 @@ export async function signup(userInfo, navigate) {
   }
 }
 
+// ADD-ITEM
 export async function itemDetail(itemInfo, navigate) {
   try {
     const { title, description, price, image } = itemInfo;
-    const storageRef = ref(storage, `ads/${image.name}`);
-    await uploadBytes(storageRef, image);
-    const imgUrl = await getDownloadURL(storageRef);
+    const imageArray = Array.from(image[0]);
+    const array = [];
+    for (let i = 0; i < imageArray.length; i++) {
+      const file = imageArray[i];
+      const storageRef = ref(storage, `images/${file.name}`);
+      await uploadBytes(storageRef, file);
+      const imgUrl = await getDownloadURL(storageRef);
+      array.push(imgUrl);
+    }
     await addDoc(collection(db, "userItem"), {
       title,
       description,
       price,
-      image: imgUrl,
+      image: array,
     });
     Swal.fire({
       title: "Successfull!",
@@ -83,6 +92,7 @@ export async function itemDetail(itemInfo, navigate) {
   }
 }
 
+// GET-ITEM
 export async function getingAds() {
   const querySnapshot = await getDocs(collection(db, "userItem"));
   const ads = [];
@@ -94,6 +104,7 @@ export async function getingAds() {
   return ads;
 }
 
+// UPDATE-PROFILE
 export async function updateprofile(update, copy, navigate) {
   try {
     const { image, id, name } = update;

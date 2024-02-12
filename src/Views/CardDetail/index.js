@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
+import { CCarousel, CCarouselItem, CImage } from "@coreui/react";
 
 import Navbar from "../../ReuseAble/Navbar";
 import Footer from "../../ReuseAble/Footer";
@@ -14,7 +15,6 @@ import { IoLocationOutline } from "react-icons/io5";
 
 function CardDetail() {
   const { id } = useParams();
-  console.log(id, " <---- id");
   const [detail, setDetail] = useState(null);
   const db = getFirestore();
 
@@ -35,7 +35,7 @@ function CardDetail() {
     };
     getDetail();
   }, [id, db]);
-  console.log(detail);
+  console.log(detail, "<-- detail ");
 
   if (!detail) {
     return (
@@ -53,7 +53,22 @@ function CardDetail() {
       <Navbar />
       <div className="detail-contant">
         <div className="detail-contantLeftSide">
-          <img className="contantImg" src={detail.image} alt="" />
+          {detail.image.map((item) => {
+            return (
+              <div
+                style={{
+                  display: "flex",
+                }}
+              >
+                <img width={370} src={item} alt="" />
+                {/* <CCarousel controls>
+                 <CCarouselItem>
+                   <CImage className="contantImg" src={item} alt="" />
+                 </CCarouselItem>
+               </CCarousel> */}
+              </div>
+            );
+          })}
         </div>
         <div className="detail-contantRightSide">
           <div className="contant-detail">

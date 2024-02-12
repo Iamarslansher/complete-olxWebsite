@@ -1,13 +1,15 @@
 .card {
   width: 20rem;
   height: 26rem;
-  background-color: transparent;
+  background-color: white;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 0 20px black;
   border: 2px solid black;
   cursor: pointer;
   transition: all 1s;
+  color: black;
+  box-shadow: 0 0 10px white, 0 0 20px black;
 }
 
 .card:hover {

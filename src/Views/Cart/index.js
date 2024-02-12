@@ -1,13 +1,13 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
 import "./index.css";
+import { useSelector, useDispatch } from "react-redux";
 import { removeToCart } from "../../store/addToCartSlice";
 
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
 function Cart() {
-  const cartItem = useSelector((state) => state.addToCart);
+  const cartItem = useSelector((state) => state.cartReducer.addToCart);
   const dispatch = useDispatch();
 
   if (cartItem.length === 0) {

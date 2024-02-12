@@ -10,6 +10,7 @@
 .detail-contantLeftSide {
   width: 70%;
   height: 100%;
+  display: flex;
 }
 
 .contantImg {

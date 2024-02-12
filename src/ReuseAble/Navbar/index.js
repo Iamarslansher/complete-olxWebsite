@@ -2,12 +2,19 @@ import React, { useEffect, useState } from "react";
 import "./index.css";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import { TfiShoppingCartFull } from "react-icons/tfi";
+import { useSelector, useDispatch } from "react-redux";
+import { setToTheme } from "../../store/themeSlice";
+import { MdDarkMode } from "react-icons/md";
+import { MdLightMode } from "react-icons/md";
 
 function Navbar() {
   const navigate = useNavigate();
   const [profile, setProfile] = useState("");
   const [url, setUrl] = useState("");
+  const [mood, setMood] = useState(true);
+
+  const dispatch = useDispatch();
+  const cartNum = useSelector((state) => state.cartReducer.addToCart);
 
   const profileSrc = { url };
   const avatarSrc =
@@ -43,6 +50,27 @@ function Navbar() {
     setProfile(profilePic);
     setUrl(profilePic.profileImgUrl);
   };
+
+  const darkMood = () => {
+    dispatch(
+      setToTheme({
+        backgroundColor: "black",
+        color: "white",
+      })
+    );
+    setMood(false);
+  };
+
+  const lightMood = () => {
+    dispatch(
+      setToTheme({
+        backgroundColor: "white",
+        color: "black",
+      })
+    );
+    setMood(true);
+  };
+
   return (
     <>
       <div className="navbar-contaniner">
@@ -80,6 +108,14 @@ function Navbar() {
               title="Cart"
               onClick={() => navigate("/cart")}
             />
+            <p className="cartNum">{cartNum.length}</p>
+          </div>
+          <div>
+            {mood ? (
+              <MdDarkMode className="darkMood" onClick={darkMood} />
+            ) : (
+              <MdLightMode className="darkMood" onClick={lightMood} />
+            )}
           </div>
 
           <div className="avtar-div">

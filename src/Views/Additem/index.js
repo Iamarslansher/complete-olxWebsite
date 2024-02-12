@@ -1,17 +1,14 @@
 import React from "react";
 import "./index.css";
 import { useNavigate } from "react-router-dom";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { itemDetail } from "../../config/firebase";
-import { StandaloneSearchBox, LoadScript } from "@react-google-maps/api";
 
 function Additem() {
-  const inputRef = useRef();
   const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
-  const [location, setLocation] = useState("");
   const [image, setImage] = useState("");
 
   const submit = async () => {
@@ -19,13 +16,6 @@ function Additem() {
       return alert("Please fill all detail");
     } else {
       await itemDetail({ title, description, price, image }, navigate);
-    }
-  };
-
-  const handlePlaceChanged = () => {
-    const [place] = inputRef.current.getPlaces();
-    if (place) {
-      console.log(place, "place");
     }
   };
 
@@ -70,31 +60,13 @@ function Additem() {
               />
               <i className="fas fa-lock" />
             </div>
-            <div className="form-row">
-              <LoadScript googleMapsApiKey="" libraries={["places"]}>
-                <StandaloneSearchBox
-                  onLoad={(ref) => (inputRef.current = ref)}
-                  onPlacesChanged={handlePlaceChanged}
-                >
-                  <>
-                    <label htmlFor="location">Location</label>
-                    <input
-                      type="text"
-                      name="location"
-                      id="location"
-                      className="input-text"
-                      placeholder="location"
-                      onChange={(e) => setLocation(e.target.value)}
-                    />
-                  </>
-                </StandaloneSearchBox>
-              </LoadScript>
-            </div>
+
             <div className="form-row">
               <input
                 type="file"
                 className="input-text"
-                onChange={(e) => setImage(e.target.files[0])}
+                onChange={(e) => setImage([e.target.files])}
+                multiple
               />
             </div>
           </form>

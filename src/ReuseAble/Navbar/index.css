@@ -87,10 +87,23 @@
   color: black;
   cursor: pointer;
   transition: all 0.4s;
+  position: relative;
 }
 
 .cartImg:hover {
   transform: translateY(-3px) scale(1.1);
+}
+
+.cartNum {
+  position: absolute;
+  top: 15px;
+  right: 400px;
+  border: 1px solid rgb(19, 18, 18);
+  width: 20px;
+  background-color: rgb(231, 10, 10);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
 }
 
 .avtar-img {
@@ -100,6 +113,11 @@
 }
 .avtar-img:hover {
   box-shadow: 0 0 10px aqua;
+  cursor: pointer;
+}
+
+.darkMood {
+  font-size: 30px;
   cursor: pointer;
 }
 
