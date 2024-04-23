@@ -15,7 +15,26 @@ function Additem() {
     if (!title || !description || !price || !image) {
       return alert("Please fill all detail");
     } else {
-      await itemDetail({ title, description, price, image }, navigate);
+      const imgUrl = await itemDetail({ image });
+
+      const payload = JSON.stringify({
+        title,
+        price,
+        description,
+        image: imgUrl,
+      });
+
+      await fetch("http://localhost:3001/products/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: payload,
+      })
+        .then((res) => res.json())
+        .then((res) => console.log(res));
+      alert("Product add successfuly!");
+      navigate("/maindashbord");
     }
   };
 
@@ -65,7 +84,7 @@ function Additem() {
               <input
                 type="file"
                 className="input-text"
-                onChange={(e) => setImage([e.target.files])}
+                onChange={(e) => setImage(e.target.files[0])}
                 multiple
               />
             </div>

@@ -118,15 +118,16 @@ function Navbar() {
             )}
           </div>
 
-          <div className="avtar-div">
-            <img
-              className="avtar-img"
-              onClick={() => navigate("/profile")}
-              src={url}
-              alt=""
-              title="Profile"
-            />
+          
+          <div>
+         
+      <div className="navbar-profile">
+        <img src="https://i.pinimg.com/originals/f1/68/53/f16853fb8fd80a8556a178ccdb40541a.jpg" alt="Profile" className="profile-image" />
+       
+      </div>
+    {/* </nav> */}
           </div>
+
         </div>
       </div>
       <div className="navbar-links">

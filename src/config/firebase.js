@@ -63,30 +63,18 @@ export async function signup(userInfo, navigate) {
 }
 
 // ADD-ITEM
-export async function itemDetail(itemInfo, navigate) {
+export async function itemDetail(itemInfo) {
   try {
-    const { title, description, price, image } = itemInfo;
-    const imageArray = Array.from(image[0]);
-    const array = [];
-    for (let i = 0; i < imageArray.length; i++) {
-      const file = imageArray[i];
-      const storageRef = ref(storage, `images/${file.name}`);
-      await uploadBytes(storageRef, file);
-      const imgUrl = await getDownloadURL(storageRef);
-      array.push(imgUrl);
-    }
+    const { image } = itemInfo;
+
+    const storageRef = ref(storage, `images/${image.name}`);
+    await uploadBytes(storageRef, image);
+    const imgUrl = await getDownloadURL(storageRef);
+    console.log(imgUrl, "imgUrl in FB");
     await addDoc(collection(db, "userItem"), {
-      title,
-      description,
-      price,
-      image: array,
+      // image: imgUrl,
     });
-    Swal.fire({
-      title: "Successfull!",
-      text: "Item add successsfully!",
-      icon: "success",
-    });
-    navigate && navigate("/maindashbord");
+    return imgUrl;
   } catch (e) {
     alert(e.message);
   }

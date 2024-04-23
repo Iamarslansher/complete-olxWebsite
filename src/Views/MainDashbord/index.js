@@ -22,8 +22,8 @@ function MainDashbord() {
   }, []);
 
   const getProducts = async () => {
-    const ads = await getingAds();
-    setProducts(ads);
+    fetch("http://localhost:3001/products").then(res => res.json()).then(res => setProducts(res.data))
+    // const ads = await getingAds();
   };
 
   return (
